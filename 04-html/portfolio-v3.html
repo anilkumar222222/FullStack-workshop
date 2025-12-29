@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Narala Anil Kumar</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container py-4">
+    <div class="row align-items-center">
+      <div class="col-12">
+        <h1>Narala Anil Kumar</h1>
+        <p class="text-muted">Full-Stack Developer</p>
+        <p class="lead">I build accessible and responsive web interfaces with a focus on clarity and performance.</p>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+
+    <section id="projects" class="mb-5">
+      <h2>Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Brain Tumor Detection using 3D Segmentation and CNN</h5>
+              <p class="card-text">Developed a deep learning model to detect and segment brain tumors from MRI/CT 3D data using U-Net; applied data augmentation and achieved results recognized for clinical application potential.</p>
+              <a href="https://github.com/your-username/brain-tumor-detection" class="btn btn-primary" target="_blank" rel="noopener">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Food Delivery Application</h5>
+              <p class="card-text">Built a full-stack app with scalable backend (Spring Boot), real-time order tracking and secure payment/auth flows; integrated personalized recommendations.</p>
+              <a href="https://github.com/your-username/food-delivery-app" class="btn btn-primary" target="_blank" rel="noopener">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Portfolio Website</h5>
+              <p class="card-text">Personal site demonstrating accessible, responsive design and modular CSS patterns.</p>
+              <a href="https://github.com/your-username/portfolio" class="btn btn-primary" target="_blank" rel="noopener">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mb-5">
+      <h2>Contact</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-light py-3">
+    <div class="container text-center small text-muted">&copy; Narala Anil Kumar <span id="year">2025</span> | <a href="mailto:anilkumar.vemu.cse@gmail.com">anilkumar.vemu.cse@gmail.com</a> | <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> | <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a></div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

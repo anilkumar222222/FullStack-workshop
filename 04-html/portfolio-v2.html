@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Narala Anil Kumar</title>
+  <link rel="stylesheet" href="portfolio-v2.css">
+</head>
+<body>
+  <header class="container">
+    <div>
+      <h1>Narala Anil Kumar</h1>
+      <p class="tagline">Full-Stack Developer</p>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <figure>
+      </figure>
+      <div>
+        <p>I build accessible and responsive web interfaces. I focus on clarity, performance, and maintainability.</p>
+        <p>I enjoy problem solving and continually learning modern web tools and best practices.</p>
+        <h3>Key Skills</h3>
+        <ul>
+          <li>HTML5 • CSS3 • Flexbox / Grid</li>
+          <li>JavaScript • ES6+</li>
+          <li>Accessibility & Performance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project-card">
+          <h3>Brain Tumor Detection using 3D Segmentation and CNN</h3>
+          <p>Developed a deep learning pipeline to detect and segment brain tumors from MRI/CT 3D data. Implemented U-Net architecture and used augmentation to improve robustness, earning recognition for clinical applicability.</p>
+          <p class="project-tags">Python • MATLAB • TensorFlow</p>
+          <p><a href="https://github.com/your-username/brain-tumor-detection" target="_blank" rel="noopener">View Project</a></p>
+        </article>
+
+        <article class="project-card">
+          <h3>Food Delivery Application</h3>
+          <p>Engineered a scalable backend for real-time ordering, tracking and secure payments; integrated personalized recommendations to boost engagement.</p>
+          <p class="project-tags">Java • Spring Boot • SQL</p>
+          <p><a href="https://github.com/your-username/food-delivery-app" target="_blank" rel="noopener">View Project</a></p>
+        </article>
+
+        <article class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>Personal site demonstrating accessible, responsive design and modular CSS patterns.</p>
+          <p class="project-tags">HTML • CSS • JavaScript</p>
+          <p><a href="https://github.com/your-username/portfolio" target="_blank" rel="noopener">View Project</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form action="#" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+      <p>Follow me: <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> | <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>&copy; Narala Anil Kumar <span id="year">2025</span> | <a href="mailto:anilkumar.vemu.cse@gmail.com">anilkumar.vemu.cse@gmail.com</a> | <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> | <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    // set current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
