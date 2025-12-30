@@ -1,33 +1,35 @@
 #!/bin/bash
 
-Log_file=${1:-"C:\Users\Anil\Downloads\sample-log.txt"}
+# Exit immediately if any command fails
+set -e
 
-if [ ! -f "$Log_file" ]; then
-    echo "Error: Log file not found: $LOG_FILE"
+# Analyze log file for errors
+DEFAULT_LOG_FILE="C:\Users\Anil\Downloads\sample-log.txt"
+
+LOG_FILE="${1:-$DEFAULT_LOG_FILE}"
+
+if [[ ! -f "$LOG_FILE" ]]; then
+    echo "Error: Log file not found -> $LOG_FILE"
     exit 1
 fi
 
-total_lines=$(wc -l < "$Log_file")
+echo""
 
-ip_address=$(grep -oE '([0-9]{1,3}\.){3}[0-9]{1,3}' "$Log_file" | sort | uniq)
 
-echo "=== Log Analysis Report ==="
-echo "File: $Log_file"
-echo "TOTAL LINES: $total_lines"
-echo "----------------------------"
-echo "INFO: $(grep -c -i 'info' "$Log_file")"
-echo "Error: $(grep -c -i 'error' "$Log_file")"
-echo "Warning: $(grep -c -i 'warning' "$Log_file")"
-echo "----------------------------"
+echo "======== Log Analysis Report ========"
+echo "File: $LOG_FILE"
+echo ""
+echo "Total Lines: $(wc -l < "$LOG_FILE")"
+echo ""
 
-echo "Unique IP Address Found:"
 
-if [ -n "$ip_address" ]; then
-    for ip in $ip_address; do
-        echo " - $ip"
-    done
-else
-    echo " No IP addresses found"
-fi
+echo "-------------------------------------"
+echo "Error count: $(grep -c 'ERROR' "$LOG_FILE")"
+echo "Warning count: $(grep -c 'WARNING' "$LOG_FILE")"
+echo "INFO count: $(grep -c  'INFO' "$LOG_FILE")"
+echo ""
 
-echo "============================"
+
+echo "--------------------------------------"
+echo "=== Unique IP Addresses ==="
+grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' "$LOG_FILE" | sort -u
