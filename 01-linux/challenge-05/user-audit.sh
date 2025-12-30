@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 echo "=== User Audit Report ==="
 
 TOTAL_USERS=$(wc -l < /etc/passwd)

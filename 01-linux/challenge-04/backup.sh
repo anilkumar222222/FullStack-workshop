@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 SRC=$1
 DEST=$2
 

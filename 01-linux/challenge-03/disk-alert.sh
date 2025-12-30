@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 THRESHOLD=${1:-90}
 EXIT_CODE=0
 

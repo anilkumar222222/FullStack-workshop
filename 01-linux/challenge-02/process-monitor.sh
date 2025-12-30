@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 PROCESS=$1
 INTERVAL=${2:-5}
 
