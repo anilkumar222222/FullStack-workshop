@@ -1,7 +1,7 @@
 # Review: 01-linux
 
 **Exercise:**  Exercise: Log File Analyzer Script
-**Review Date:** 2025-12-30 11:34
+**Review Date:** 2025-12-30 15:31
 
 ---
 
@@ -16,7 +16,7 @@
 ### Code Review
 
 📄 **file-organizer.sh**
-   Path: `01-linux/challenge 1/file-organizer.sh`
+   Path: `01-linux/challenge-01/file-organizer.sh`
    Lines: 23
 
     - ✅ Has shebang (`#!/bin/bash`)
@@ -28,7 +28,7 @@
    **Score: 3/5**
 
 📄 **process-monitor.sh**
-   Path: `01-linux/challenge 2/process-monitor.sh`
+   Path: `01-linux/challenge-02/process-monitor.sh`
    Lines: 22
 
     - ✅ Has shebang (`#!/bin/bash`)
@@ -40,7 +40,7 @@
    **Score: 3/5**
 
 📄 **disk-alert.sh**
-   Path: `01-linux/challenge 3/disk-alert.sh`
+   Path: `01-linux/challenge-03/disk-alert.sh`
    Lines: 16
 
     - ✅ Has shebang (`#!/bin/bash`)
@@ -52,7 +52,7 @@
    **Score: 3/5**
 
 📄 **backup.sh**
-   Path: `01-linux/challenge 4/backup.sh`
+   Path: `01-linux/challenge-04/backup.sh`
    Lines: 21
 
     - ✅ Has shebang (`#!/bin/bash`)
@@ -64,7 +64,7 @@
    **Score: 3/5**
 
 📄 **user-audit.sh**
-   Path: `01-linux/challenge 5/user-audit.sh`
+   Path: `01-linux/challenge-05/user-audit.sh`
    Lines: 20
 
     - ✅ Has shebang (`#!/bin/bash`)
@@ -77,17 +77,17 @@
 
 📄 **log-analyzer.sh**
    Path: `01-linux/log-analyzer.sh`
-   Lines: 33
+   Lines: 35
 
     - ✅ Has shebang (`#!/bin/bash`)
-    - ❌ Missing `set -e` for error handling
+    - ✅ Has error handling (`set -e`)
     - ⚠️ No argument handling detected
-    - 💡 Consider adding more comments
+    - ✅ Has comments (3 lines)
     - ✅ Variables are properly quoted
 
-   **Score: 2/5**
+   **Score: 4/5**
 
-### Topic Score: 22 / 35 (62%)
+### Topic Score: 24 / 35 (68%)
 
 ### Technical Checklist
 
@@ -103,9 +103,7 @@
 
 ## Challenge
 
-**Status:** ⚠️ Not submitted
-
-Submit to: `01-linux/challenge-01/`
+**Status:** ✅ Submitted (1 files)
 
 ---
 
