@@ -1,32 +1,55 @@
 /* portfolio-v2.css */
+/* Enhanced styling: Grid/Flex layouts, custom typography, variables, hover effects, responsive rules */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 :root{
+  /* Color palette */
   --primary-color:#2b6cb0;
+  --primary-600:#234f7a;
   --accent-color:#f6ad55;
   --bg:#f8fafc;
   --card-bg:#ffffff;
-  --text:#1f2937;
+  --muted:#6b7280;
+  --text:#0f1724;
+
+  /* Layout & spacing */
   --max-width:1100px;
+  --gutter:1rem;
+  --radius:10px;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --base-font-size:16px;
 }
+
 *{box-sizing:border-box}
+html{font-size:16px}
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  font-family:var(--font-sans);
   color:var(--text);
-  background:var(--bg);
+  background:linear-gradient(180deg,var(--bg),#ffffff 60%);
   line-height:1.6;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
+
 .container{
   max-width:var(--max-width);
   margin:0 auto;
-  padding:1rem;
+  padding:calc(var(--gutter) * 1.25);
 }
+
+/* Header */
 header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:1rem;
+  gap:var(--gutter);
   padding:1rem 0;
 }
+header h1{font-size:clamp(1.25rem,2vw,1.6rem);margin:0}
+.tagline{color:var(--primary-color);font-weight:600;margin-top:.2rem}
+
 nav ul{
   list-style:none;
   display:flex;
@@ -34,24 +57,92 @@ nav ul{
   padding:0;
   margin:0;
 }
-nav a{color:var(--primary-color);text-decoration:none}
-/* Keyboard focus styles for accessibility */
-a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(59,130,246,0.6); outline-offset: 2px; }
-.tagline{color:var(--primary-color);font-weight:600}
-main{display:grid;grid-template-columns:1fr;gap:2rem;padding-bottom:2rem}
-#about{display:flex;gap:1.5rem;align-items:flex-start}
-#about figure{margin:0}
-#about img{border-radius:8px;display:block}
+nav a{
+  color:var(--primary-600);
+  text-decoration:none;
+  padding:.25rem .5rem;
+  border-radius:6px;
+  transition:background .18s ease, color .18s ease, transform .12s ease;
+}
+nav a:hover, nav a:focus{background:rgba(43,108,176,0.07); transform:translateY(-2px); outline:none}
+
+/* Page layout */
+main{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap:2rem;
+  padding-bottom:2rem;
+  align-items:start;
+}
+
+section h2{font-size:1.25rem;margin-top:0;color:var(--primary-600)}
+
+/* About */
+#about{margin-bottom:1rem}
+#about > p{margin:0 0 1rem 0;max-width:70ch;color:var(--muted)}
+.about-grid{display:flex;gap:1.5rem;align-items:flex-start}
+.about-grid figure{margin:0;min-width:160px}
+#about img{border-radius:var(--radius);display:block;max-width:100%;height:auto;box-shadow:0 6px 18px rgba(15,23,36,0.06)}
+#about p{margin-top:0}
+
+/* Projects grid */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-.project-card{background:var(--card-bg);padding:1rem;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.06);transition:transform .15s ease,box-shadow .15s ease}
-.project-card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
-.project-tags{font-size:.9rem;color:var(--primary-color)}
-form div{margin-bottom:.75rem}
-input[type="text"],input[type="email"],textarea{width:100%;padding:.5rem;border:1px solid #e5e7eb;border-radius:6px}
-button{background:var(--primary-color);color:#fff;padding:.6rem 1rem;border:0;border-radius:6px;cursor:pointer}
-button:hover{background:#234f7a}
-footer{text-align:center;padding:1rem 0;color:#6b7280;border-top:1px solid #e6e6e6}
-@media (max-width:768px){
+.project-card{
+  background:var(--card-bg);
+  padding:1.25rem;
+  border-radius:var(--radius);
+  box-shadow:0 8px 20px rgba(15,23,36,0.06);
+  transition:transform .2s cubic-bezier(.2,.9,.3,1), box-shadow .2s ease;
+  border:1px solid rgba(15,23,36,0.03);
+  display:flex;flex-direction:column;gap:.5rem;
+}
+.project-card:hover, .project-card:focus-within{transform:translateY(-6px) scale(1.01); box-shadow:0 18px 40px rgba(15,23,36,0.09)}
+.project-card h3{margin:.15rem 0}
+.project-tags{font-size:.9rem;color:var(--primary-color);margin-top:auto}
+.project-card a{color:var(--primary-600);text-decoration:none;font-weight:600}
+.project-card a:hover{color:var(--primary-color);text-decoration:underline}
+
+/* Contact form */
+form{background:linear-gradient(180deg,rgba(43,108,176,0.03),transparent);padding:1rem;border-radius:8px}
+form div{margin-bottom:.9rem}
+label{display:block;font-weight:600;margin-bottom:.35rem;font-size:.95rem}
+input[type="text"],input[type="email"],textarea{
+  width:100%;padding:.7rem;border:1px solid #e6eef8;border-radius:8px;background:#fff;transition:box-shadow .12s ease, border-color .12s ease;
+}
+input[type="text"]:focus,input[type="email"]:focus,textarea:focus{border-color:var(--primary-color); box-shadow:0 6px 18px rgba(43,108,176,0.08); outline:none}
+
+button{
+  background:linear-gradient(90deg,var(--primary-color),var(--primary-600));
+  color:#fff;padding:.7rem 1rem;border:0;border-radius:8px;cursor:pointer;font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+button:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(43,108,176,0.16)}
+
+/* Footer */
+footer{text-align:center;padding:1rem 0;color:var(--muted);border-top:1px solid rgba(0,0,0,0.04);margin-top:2rem}
+
+/* Small helpers */
+.small{font-size:.9rem;color:var(--muted)}
+
+/* Responsive rules */
+@media (max-width:1100px){
+  main{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:900px){
+  main{grid-template-columns:1fr}
   #about{flex-direction:column;align-items:center;text-align:center}
   header{flex-direction:column;align-items:flex-start}
 }
+
+@media (max-width:480px){
+  nav ul{flex-wrap:wrap;gap:.5rem}
+  header h1{font-size:1.15rem}
+}
+
+/* Accessibility & reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+/* End of file */
